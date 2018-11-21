@@ -9,3 +9,7 @@
 
 ## API reference:
 [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+
+## Reference resource:
+1. [ModernAndroidApp](https://github.com/mladenrakonjac/ModernAndroidApp)
+2. [MVVMPosts](https://github.com/gahfy/MVVMPosts)
