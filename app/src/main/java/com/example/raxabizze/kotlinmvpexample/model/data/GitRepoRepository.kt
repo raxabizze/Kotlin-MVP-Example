@@ -3,12 +3,8 @@ package com.example.raxabizze.kotlinmvpexample.model.data
 import com.example.raxabizze.kotlinmvpexample.model.Repository
 import com.example.raxabizze.kotlinmvpexample.utils.NetManager
 import io.reactivex.Observable
-import me.mladenrakonjac.modernandroidapp.data.GitRepoRemoteDataSource
 import javax.inject.Inject
 
-/**
- * Repository for GitHub Repository models
- */
 class GitRepoRepository @Inject constructor(var netManager: NetManager) {
 
     private val localDataSource = GitRepoLocalDataSource()
@@ -18,17 +14,14 @@ class GitRepoRepository @Inject constructor(var netManager: NetManager) {
 
         netManager.isConnectedToInternet?.let {
             if (it) {
-                return remoteDataSource.getRepositories().flatMap {
-                    return@flatMap localDataSource.saveRepositories(it)
-                            .toSingleDefault(it)
-                            .toObservable()
-                }
+                //todo save those data to local data store
+                return remoteDataSource.getRepositories()
             }
         }
-
         return localDataSource.getRepositories()
     }
 }
+
 
 
 

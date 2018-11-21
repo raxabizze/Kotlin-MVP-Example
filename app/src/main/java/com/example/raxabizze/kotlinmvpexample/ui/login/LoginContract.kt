@@ -1,21 +1,32 @@
 package com.example.raxabizze.kotlinmvpexample.ui.login
 
+import android.arch.lifecycle.MutableLiveData
 import com.example.raxabizze.kotlinmvpexample.base.BaseAttacher
 import com.example.raxabizze.kotlinmvpexample.base.BaseView
+import com.example.raxabizze.kotlinmvpexample.model.Repository
 
 interface LoginContract {
 
     interface View : BaseView {
 
-        fun onRegisterClick()
+        fun onLoadDataClick()
 
-        fun onSubmitClick()
+        fun onLoadDataSuccess(repositories: ArrayList<Repository>)
 
-        fun onLoginSuccess()
+        fun onLoadDataFailure()
+
+        interface OnItemClickListener {
+            fun onItemClick(position: Int)
+        }
     }
 
 
     interface Presenter<V : View> : BaseAttacher<V>{
-        fun onLoginCheck(account : String = "000", password : String = "000")
+
+        fun onLoadRepositories()
+    }
+
+    interface Adapter {
+        fun replaceData(arrayList: ArrayList<Repository>)
     }
 }
