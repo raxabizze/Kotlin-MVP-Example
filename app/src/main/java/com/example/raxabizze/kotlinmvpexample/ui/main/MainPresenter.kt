@@ -11,14 +11,14 @@ import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
 
 @MainScoped
-class MainPresenter<V : MainContract.View> @Inject constructor(var schedulerProvider: SchedulerProvider, var mPostApi: PostApi) :  BasePresenter<V>(), MainContract.Presenter<V> {
+class MainPresenter<V : MainContract.View> @Inject constructor() :  BasePresenter<V>(), MainContract.Presenter<V> {
 
 
     override fun onLoadRepositories() {
 //        val url = getView()?.getResourceString(R.string.api_request_todo, "200")
 
         /** method 1 **/
-        addSubscribe(mPostApi.getPosts("/todos/")
+        mCompositeDisposable.add(mPostApi.getPosts("/todos/")
             .subscribeOn(schedulerProvider.io())
             .observeOn(schedulerProvider.ui())
             .subscribeWith(object : DisposableObserver<List<Post>>() {
