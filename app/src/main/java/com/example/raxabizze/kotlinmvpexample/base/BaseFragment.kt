@@ -26,12 +26,12 @@ abstract class BaseFragment : BaseView, Fragment() {
     override fun dismissProgressDialog() {
     }
 
-    override fun showToast(@StringRes text: Int) {
-//        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun showToast(text: String) {
-//        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
-    }
+//    override fun showToast(@StringRes text: Int) {
+////        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun showToast(text: String) {
+////        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+//    }
 
 }

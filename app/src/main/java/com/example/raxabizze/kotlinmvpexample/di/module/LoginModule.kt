@@ -13,12 +13,8 @@ class LoginModule {
 
     @Provides
     internal fun providePresenter(presenter: LoginPresenter<LoginContract.View>)
-            : LoginContract.Presenter<LoginContract.View> {
-        return presenter
-    }
+            : LoginContract.Presenter<LoginContract.View> =  presenter
 
     @Provides
-    internal fun provideRepository() : Repository {
-        return Repository("")
-    }
+    internal fun provideRepository() : Repository = Repository("")
 }

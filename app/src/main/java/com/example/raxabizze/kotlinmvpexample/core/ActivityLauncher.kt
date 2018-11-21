@@ -8,9 +8,7 @@ import android.os.Bundle;
 object ActivityLauncher {
     fun go(context: Context, activityClass: Class<out Activity>, args: Bundle?) {
         val intent = Intent(context, activityClass)
-        if (args != null) {
-            intent.putExtras(args)
-        }
+        args?.let { intent.putExtras(args) }
         context.startActivity(intent)
     }
 }

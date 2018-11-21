@@ -71,4 +71,10 @@ class LoginActivity : BaseActivity(), LoginContract.View {
             toast("onItemClick position: $position")
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mPresenter.onDetached()
+        super.onDestroy()
+    }
 }

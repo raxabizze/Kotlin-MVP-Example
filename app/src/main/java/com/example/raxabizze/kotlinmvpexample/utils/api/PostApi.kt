@@ -1,4 +1,4 @@
-package com.example.raxabizze.kotlinmvpexample.network
+package com.example.raxabizze.kotlinmvpexample.utils.api
 
 import com.example.raxabizze.kotlinmvpexample.utils.api.pojo.post.Post
 import io.reactivex.Observable

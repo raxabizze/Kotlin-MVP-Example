@@ -12,5 +12,4 @@ class Repository(status : String) : BaseObservable(){
         field = value
         notifyPropertyChanged(BR.status)
     }
-
 }
