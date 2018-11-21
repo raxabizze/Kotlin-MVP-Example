@@ -1,13 +1,5 @@
 <resources>
     <string name="app_name">KotlinMVPExample</string>
 
-    <string name="login_account">會員帳號</string>
-    <string name="login_password">會員密碼</string>
-    <string name="login_account_hint">輸入手機號碼或信箱</string>
-    <string name="login_password_hint">密碼最少六碼</string>
-    <string name="login_https">HTTPS</string>
-    <string name="login_sign_up">註冊會員</string>
-    <string name="login_submit">確認送出</string>
-    <string name="login_forget_password">忘記密碼</string>
-    <string name="login_permanent">常駐</string>
+    <string name="api_request_todo">/todo/%1$s</string>
 </resources>

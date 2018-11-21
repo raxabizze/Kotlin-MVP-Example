@@ -8,8 +8,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="repository"
-            type="com.example.raxabizze.kotlinmvpexample.model.Repository"/>
+            name="post"
+            type="com.example.raxabizze.kotlinmvpexample.utils.api.pojo.post.Post"/>
     </data>
 
     <android.support.v7.widget.CardView
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
-                android:text="@{repository.repositoryName}"
+                android:text="@{post.body}"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -44,9 +44,9 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="has_issues"
+                android:text="one"
                 android:textStyle="bold"
-                android:visibility="@{repository.hasIssues ? View.VISIBLE : View.GONE}"
+                android:visibility="@{post.userId == 1 ? View.VISIBLE : View.GONE}"
                 app:layout_constraintBottom_toBottomOf="@+id/repository_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -61,7 +61,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
-                android:text="@{repository.repositoryOwner}"
+                android:text="@{post.id}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="@{String.valueOf(repository.numberOfStars)}"
+                android:text="@{String.valueOf(post.title)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1"

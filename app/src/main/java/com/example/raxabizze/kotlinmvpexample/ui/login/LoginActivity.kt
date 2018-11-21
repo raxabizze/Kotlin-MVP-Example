@@ -7,6 +7,7 @@ import android.view.View
 import com.example.raxabizze.kotlinmvpexample.R
 import com.example.raxabizze.kotlinmvpexample.base.BaseActivity
 import com.example.raxabizze.kotlinmvpexample.model.Repository
+import com.example.raxabizze.kotlinmvpexample.utils.api.pojo.post.Post
 import com.example.raxabizze.kotlinmvpexample.utils.toast
 import javax.inject.Inject
 import com.example.raxabizze.kotlinmvpexample.databinding.ActivityLoginBinding as Binding
@@ -14,6 +15,9 @@ import com.example.raxabizze.kotlinmvpexample.databinding.ActivityLoginBinding a
 class LoginActivity : BaseActivity(), LoginContract.View {
 
     lateinit var binding: Binding
+
+    @Inject
+    lateinit var mRepository : Repository
 
     @Inject
     internal lateinit var mPresenter: LoginContract.Presenter<LoginContract.View>
@@ -30,6 +34,7 @@ class LoginActivity : BaseActivity(), LoginContract.View {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         binding.run {
             view = this@LoginActivity
+            repository = mRepository
             loading.visibility = View.INVISIBLE
             recyclerView.layoutManager = LinearLayoutManager(this@LoginActivity)
             recyclerView.adapter = mAdapter
@@ -42,19 +47,22 @@ class LoginActivity : BaseActivity(), LoginContract.View {
 
         binding.loading.visibility = View.VISIBLE
         mPresenter.onLoadRepositories()
+        mRepository.status = "Loading ~"
     }
 
     override fun onLoadDataFailure() {
 
         toast("onLoadDataFailure")
         binding.loading.visibility = View.INVISIBLE
+        mRepository.status = ""
     }
 
-    override fun onLoadDataSuccess(repositories: ArrayList<Repository>) {
+    override fun onLoadDataSuccess(mDataList: List<Post>) {
 
         toast("onLoadDataSuccess")
-        mAdapter.replaceData(repositories)
+        mAdapter.replaceData(mDataList)
         binding.loading.visibility = View.INVISIBLE
+        mRepository.status = ""
     }
 
     fun itemClickListener() = object: LoginContract.View.OnItemClickListener {

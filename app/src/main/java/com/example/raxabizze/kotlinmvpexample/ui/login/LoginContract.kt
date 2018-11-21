@@ -1,9 +1,8 @@
 package com.example.raxabizze.kotlinmvpexample.ui.login
 
-import android.arch.lifecycle.MutableLiveData
 import com.example.raxabizze.kotlinmvpexample.base.BaseAttacher
 import com.example.raxabizze.kotlinmvpexample.base.BaseView
-import com.example.raxabizze.kotlinmvpexample.model.Repository
+import com.example.raxabizze.kotlinmvpexample.utils.api.pojo.post.Post
 
 interface LoginContract {
 
@@ -11,7 +10,7 @@ interface LoginContract {
 
         fun onLoadDataClick()
 
-        fun onLoadDataSuccess(repositories: ArrayList<Repository>)
+        fun onLoadDataSuccess(mDataList: List<Post>)
 
         fun onLoadDataFailure()
 
@@ -27,6 +26,6 @@ interface LoginContract {
     }
 
     interface Adapter {
-        fun replaceData(arrayList: ArrayList<Repository>)
+        fun replaceData(mDataList: List<Post>)
     }
 }
