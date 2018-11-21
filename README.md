@@ -5,7 +5,7 @@
 2.Dagger2 \
 3.Rxjava2 \
 4.Databinding \
-5.OK HTTP \
+5.OK HTTP 
 
 ## API :
 [JSONPlaceholder](https://jsonplaceholder.typicode.com)
