@@ -6,17 +6,12 @@
     <data>
     </data>
 
-
-
     <android.support.constraint.ConstraintLayout
+        android:background="@android:color/holo_blue_bright"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <RelativeLayout
-            android:id="@+id/layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
     </android.support.constraint.ConstraintLayout>
 
 </layout>
