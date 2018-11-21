@@ -1,4 +1,4 @@
-package com.example.raxabizze.kotlinmvpexample.ui.login
+package com.example.raxabizze.kotlinmvpexample.ui.main
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -10,9 +10,9 @@ import com.example.raxabizze.kotlinmvpexample.model.Repository
 import com.example.raxabizze.kotlinmvpexample.utils.api.pojo.post.Post
 import com.example.raxabizze.kotlinmvpexample.utils.toast
 import javax.inject.Inject
-import com.example.raxabizze.kotlinmvpexample.databinding.ActivityLoginBinding as Binding
+import com.example.raxabizze.kotlinmvpexample.databinding.ActivityMainBinding as Binding
 
-class LoginActivity : BaseActivity(), LoginContract.View {
+class MainActivity : BaseActivity(), MainContract.View {
 
     lateinit var binding: Binding
 
@@ -20,9 +20,9 @@ class LoginActivity : BaseActivity(), LoginContract.View {
     lateinit var mRepository : Repository
 
     @Inject
-    internal lateinit var mPresenter: LoginContract.Presenter<LoginContract.View>
+    internal lateinit var mPresenter: MainContract.Presenter<MainContract.View>
 
-    private val mAdapter = LoginAdapter(arrayListOf(), itemClickListener())
+    private val mAdapter = MainAdapter(arrayListOf(), itemClickListener())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +31,12 @@ class LoginActivity : BaseActivity(), LoginContract.View {
 
     private fun onSetUp() {
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.run {
-            view = this@LoginActivity
+            view = this@MainActivity
             repository = mRepository
             loading.visibility = View.INVISIBLE
-            recyclerView.layoutManager = LinearLayoutManager(this@LoginActivity)
+            recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
             recyclerView.adapter = mAdapter
         }
 
@@ -65,7 +65,7 @@ class LoginActivity : BaseActivity(), LoginContract.View {
         mRepository.status = ""
     }
 
-    fun itemClickListener() = object: LoginContract.View.OnItemClickListener {
+    fun itemClickListener() = object: MainContract.View.OnItemClickListener {
 
         override fun onItemClick(position: Int) {
             toast("onItemClick position: $position")

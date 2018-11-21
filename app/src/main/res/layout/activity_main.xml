@@ -7,7 +7,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <variable
         name="view"
-        type="com.example.raxabizze.kotlinmvpexample.ui.login.LoginContract.View"/>
+        type="com.example.raxabizze.kotlinmvpexample.ui.main.MainContract.View"/>
 
     <variable
         name="repository"
@@ -49,7 +49,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_login" />
+            tools:listitem="@layout/item_main" />
 
 
 

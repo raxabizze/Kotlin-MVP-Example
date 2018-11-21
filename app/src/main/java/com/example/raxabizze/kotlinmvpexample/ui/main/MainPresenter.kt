@@ -1,8 +1,8 @@
-package com.example.raxabizze.kotlinmvpexample.ui.login
+package com.example.raxabizze.kotlinmvpexample.ui.main
 
 import android.util.Log
 import com.example.raxabizze.kotlinmvpexample.base.BasePresenter
-import com.example.raxabizze.kotlinmvpexample.di.annotation.LoginScoped
+import com.example.raxabizze.kotlinmvpexample.di.annotation.MainScoped
 import com.example.raxabizze.kotlinmvpexample.utils.api.PostApi
 import com.example.raxabizze.kotlinmvpexample.utils.api.pojo.post.Post
 import com.example.raxabizze.kotlinmvpexample.utils.rxjava.scheduler.SchedulerProvider
@@ -10,8 +10,8 @@ import io.reactivex.annotations.NonNull
 import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
 
-@LoginScoped
-class LoginPresenter<V : LoginContract.View> @Inject constructor(var schedulerProvider: SchedulerProvider, var mPostApi: PostApi) :  BasePresenter<V>(), LoginContract.Presenter<V> {
+@MainScoped
+class MainPresenter<V : MainContract.View> @Inject constructor(var schedulerProvider: SchedulerProvider, var mPostApi: PostApi) :  BasePresenter<V>(), MainContract.Presenter<V> {
 
 
     override fun onLoadRepositories() {

@@ -1,10 +1,10 @@
-package com.example.raxabizze.kotlinmvpexample.ui.login
+package com.example.raxabizze.kotlinmvpexample.ui.main
 
 import com.example.raxabizze.kotlinmvpexample.base.BaseAttacher
 import com.example.raxabizze.kotlinmvpexample.base.BaseView
 import com.example.raxabizze.kotlinmvpexample.utils.api.pojo.post.Post
 
-interface LoginContract {
+interface MainContract {
 
     interface View : BaseView {
 
