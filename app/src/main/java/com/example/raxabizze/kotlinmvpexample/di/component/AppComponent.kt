@@ -1,10 +1,7 @@
 package com.example.raxabizze.kotlinmvpexample.di.component
 
 import com.example.raxabizze.kotlinmvpexample.App
-import com.example.raxabizze.kotlinmvpexample.di.module.base.FragmentBuilder
-import com.example.raxabizze.kotlinmvpexample.di.module.base.ActivityBuilder
-import com.example.raxabizze.kotlinmvpexample.di.module.base.ApiModule
-import com.example.raxabizze.kotlinmvpexample.di.module.base.AppModule
+import com.example.raxabizze.kotlinmvpexample.di.module.base.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -17,6 +14,7 @@ import javax.inject.Singleton
         ApiModule::class,
         AndroidInjectionModule::class,
         AndroidSupportInjectionModule::class,  //remove this line when add a fragment
+        ServiceBuilderModule::class,
         ActivityBuilder::class,
         FragmentBuilder::class))
 interface AppComponent {
